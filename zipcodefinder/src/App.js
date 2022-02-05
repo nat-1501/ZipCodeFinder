@@ -1,15 +1,27 @@
+import { useState } from 'react';
+import {FiSearch} from 'react-icons/fi';
 import './styles.css';
 
-import {FiSearch} from 'react-icons/fi'
+
 function App() {
+
+  const [input, setInput] = useState('')
+
+  function handleSearch() {
+    alert("Clicou " + input)
+  }
+
   return (
     <div className="container">
       <h1 className="title">Zip Code Finder</h1>
 
       <div className="containerInput">
-        <input type="text" placeholder="Type your CEP.."/>
+        <input type="text" placeholder="Type your CEP.."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        />
 
-        <button className="ButtonSearch">
+        <button className="ButtonSearch" onClick={handleSearch}>
           <FiSearch size={25} color="#ffff"/>
         </button>
       </div>
