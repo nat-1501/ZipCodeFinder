@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {FiSearch} from 'react-icons/fi';
 import './styles.css';
 import api from './services/api';
+import ContentLoader, {Facebook} from 'react-content-loader';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         </button>
       </div>
 
+
     {Object.keys(cep).length > 0 && (
       <main className="main">
         <h2>CEP: {cep.cep}</h2>
@@ -49,11 +51,11 @@ function App() {
         <span>Complemento: {cep.complemento}</span>
         <span>{cep.bairro}</span>
         <span>{cep.localidade} - {cep.uf}</span>
-
+        <ContentLoader/>
       </main>
-
+      
     )}
-
+      
     </div>
   );
 }
