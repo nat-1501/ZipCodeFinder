@@ -29,14 +29,13 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="title">Zip Code Finder</h1>
+      <h1 className="title">Zip Code Finder Project</h1>
 
       <div className="containerInput">
         <input type="text" placeholder="Type your CEP.."
         value={input}
         onChange={(e) => setInput(e.target.value)}
         />
-
         <button className="ButtonSearch" onClick={handleSearch}>
           <FiSearch size={25} color="#ffff"/>
         </button>
